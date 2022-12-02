@@ -1,6 +1,37 @@
 @use '../../styles/colors';
 @import '../../styles/mixins';
 
-.credential {
+.cred-list-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    border: 2px solid colors.$primary;
+    border-radius: .5em;
+    padding: 2em;
+    transition: .2s all;
 
+    &:hover {
+        border-color: colors.$secondary;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1em;
+    }
+
+
+    &__button {
+        font-size: 1em;
+    }
+
+    &__inputs {
+        display: flex;
+        gap: 1em;
+    }
+
+    &__input {
+        font-size: 1em;
+    }
 }

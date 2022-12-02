@@ -1,8 +1,15 @@
 import { useDispatch } from 'react-redux'
-import { logout } from '../redux/features/authSlice'
+import { logout, clearUserData } from '../redux'
 
-const dispatch = useDispatch()
-function logoutHandler() {
-    dispatch(logout())
-    localStorage.setItem('isAuth', 'false')
+const useLogout = () => {
+    const dispatch = useDispatch()
+
+    function logoutHandler() {
+        dispatch(logout())
+        dispatch(clearUserData())
+        localStorage.clear()
+    }
+    return logoutHandler
 }
+
+export { useLogout }

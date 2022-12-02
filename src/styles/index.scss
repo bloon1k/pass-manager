@@ -1,15 +1,40 @@
 @use './colors.scss';
+@import './_mixins.scss';
 
 html,
-body {
+body, h1, h2, h3, h4, h5 {
     margin: 0;
     padding: 0;
 }
 
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 ul {
     list-style: none;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    min-height: 100vh;
+    padding: 10vh 10vw;
+    background-image: linear-gradient(to right top, #051937, #004268, #006d77, #00965a, #86b61a);
+}
+
+.input {
+    @include input;
+}
+
+
+.button {
+    @include button;
+}
+
+.error {
+    @include errorMessage;
 }

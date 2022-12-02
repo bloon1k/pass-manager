@@ -1,1 +1,48 @@
 @use './colors.scss';
+
+@mixin input {
+  background: rgba(0, 0, 0, 0);
+  color: colors.$font;
+  border: 2px solid colors.$primary;
+  border-radius: .5em;
+  padding-left: .3em;
+  font-size: 1.3em;
+  width: 100%;
+  height: 2em;
+  transition: .2s all;
+
+  &:hover {
+    border-color: colors.$secondary;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+@mixin button {
+  background: rgba(0, 0, 0, 0);
+  color: colors.$font;
+  border: 2px solid colors.$primary;
+  border-radius: .5em;
+  font-size: 1.3em;
+  padding: 2%;
+  transition: .3s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+
+  &:hover {
+    background: colors.$primary;
+    color: white;
+  }
+}
+
+@mixin errorMessage {
+  color: darkred;
+  align-self: flex-start;
+  font-size: .8em;
+}
+

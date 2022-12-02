@@ -1,0 +1,27 @@
+@use '../../styles/colors';
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+  background: colors.$white;
+  border-radius: 1em 1em 0 0;
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.4em;
+  }
+
+  &__button {
+    font-size: 1.2em;
+    border: 0;
+    padding: 0;
+
+    &:hover {
+      color: colors.$secondary;
+      background: 0;
+    }
+  }
+}

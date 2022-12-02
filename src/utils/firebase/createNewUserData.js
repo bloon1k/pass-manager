@@ -1,11 +1,8 @@
 import { doc, setDoc } from 'firebase/firestore'
-import { database } from './firebase'
+import { database } from '../../utils'
 
 export async function createNewUserData(userId) {
-    await setDoc(doc(database, 'credentialsLists', userId), {})
-        .then(() => 'success')
-        .catch((error) => {
-            const errorCode = error.code
-            alert('Error: ' + errorCode)
-        })
+    await setDoc(doc(database, 'credentialsLists', userId), {
+        credentialsList: [],
+    }).catch((error) => alert('Error: ' + error.code))
 }
